@@ -8,7 +8,9 @@ void setup() {
   // serial to display data
   Serial.begin(115200);
   while(!Serial) {}
-
+  
+  Wire.begin(10, 9); // 사용자 지정 I2C 핀 설정
+  
   // start communication with IMU
   status = IMU.begin();
   if (status < 0) {
